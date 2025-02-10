@@ -1,1 +1,2 @@
 # COMP333-Landing-Page
+This landing page was created by Carlos Munoz and Franklin Mindich as part of an excercise for the Software Engineering course at Wesleyan University. The work between the group was split 50/50. 
