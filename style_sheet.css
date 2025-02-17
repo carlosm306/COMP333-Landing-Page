@@ -1,1 +1,8 @@
 /* this is the CSS file */
+.copy-class{
+    color : red ; 
+}
+
+h2{
+    font-size: 40px ;
+}
