@@ -1,1 +1,39 @@
 /* this is the CSS file */
+
+
+/* sub units of the movie flexbox */
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 15vw;
+    max-height: 20vw;
+    min-height: 120px;
+    min-width: 90px;
+    margin: 1vw;
+    overflow: hidden;
+  }
+
+/* Centered text */
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    color:Tomato;
+  }
+
+/* flexbox displayin available movies
+
+------ action item ----- change to id identifier -------------------
+ */
+
+.title_set {
+    background-color: aquamarine;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
