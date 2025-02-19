@@ -30,10 +30,13 @@ h2{
 
 table {
   border-collapse: collapse;
+  width: 90%;
+  font-size: 25px;
 }
 tr { 
   border: solid black;
   border-width: 2px 0;
+  height: 50px;
 }
 td{
   border-left: solid black 2px ;
@@ -42,6 +45,12 @@ td{
 th{
   border-left: solid black 2px ;
   border-right: solid black 2px;
+}
+
+.normal{
+  font-weight: 100;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .questions{
