@@ -117,3 +117,7 @@ th{
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  #map {
+    color: whitesmoke;
+  }
