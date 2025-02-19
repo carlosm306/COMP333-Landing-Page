@@ -28,6 +28,10 @@ th{
   border-right: solid black 2px;
 }
 
+.normal{
+  font-weight: 100;
+}
+
 .questions{
   font-weight: bold;
 }
