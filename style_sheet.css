@@ -35,6 +35,27 @@ th{
     margin-right: auto;
 }
 
+#genre1{
+  background-color: aquamarine;
+  padding: 2%;
+}
+
+#BirdMoviesSub {
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1vw;
+}
+
+#BirdMovies {
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3.5vw;
+}
+
 /* sub units of the movie flexbox */
 .container {
     position: relative;
@@ -58,11 +79,7 @@ th{
     color:Tomato;
   }
 
-/* flexbox displayin available movies
-
------- action item ----- change to id identifier -------------------
- */
-
+/* flexbox displaying available movies*/
 .title_set {
     background-color: aquamarine;
     display: flex;
