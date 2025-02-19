@@ -157,3 +157,13 @@ th{
     font-size: 2vw;
     color: whitesmoke;
   }
+
+  #sign_up {
+    font-size: 50px ;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70vw;
+    color:blue;
+    padding: 10px;
+  }
