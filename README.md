@@ -1,7 +1,7 @@
 # COMP333-Landing-Page
 This landing page was created by Carlos Munoz and Franklin Mindich as part of an excercise for the Software Engineering course at Wesleyan University. The work between the group was split 50/50. 
 
-The file landing_page.html contains the html for the main page defined in the project. We decided to decided to make the landing page for a streaming website, specifically dedicated to nature/animal movies. 
+The file landing_page.html contains the html for the main page defined in the project. We decided to decided to make the landing page for a streaming website specifically dedicated to nature/animal movies. 
 
 It can be previewed at:
 https://carlosm306.github.io/COMP333-Landing-Page/landing_page.html 
