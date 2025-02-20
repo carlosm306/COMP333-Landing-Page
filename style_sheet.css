@@ -11,6 +11,24 @@ h2{
     font-size: 20px ;
 }
 
+
+.navbar li{
+  color: black ; 
+  font-size: 35px ; 
+  width: 300px;
+  background-color: bisque;
+  border: 2px solid red;
+  display: inline-block;
+  line-height: 100px ; 
+  text-align: center;
+
+}
+
+.navbar a{
+  color: black;
+  text-align: center;
+}
+
 #slogan {
   font-size: 60px ;
   font-style: italic;
@@ -56,6 +74,12 @@ th{
 .questions{
   font-weight: bold;
 }
+
+#faq{
+  margin-left: auto;
+}
+
+
 
 .centering{
     padding: 30px 0 ; 
