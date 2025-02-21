@@ -12,6 +12,8 @@ h2{
 }
 
 
+
+=======
 .navbar li{
   color: black ; 
   font-size: 35px ; 
@@ -116,6 +118,22 @@ th{
   font-size: 4vw;
 }
 
+#ReptileMovies{
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4vw;
+}
+
+#MammalMovies{
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4vw;
+}
+
 /* sub units of the movie flexbox */
 .container {
     position: relative;
@@ -196,4 +214,10 @@ th{
     max-width: 70vw;
     color:blue;
     padding: 10px;
+  }
+
+  .blueheader{
+    color: blue;
+    font-size: 30px;
+    text-align: center;
   }
