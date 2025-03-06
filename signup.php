@@ -24,14 +24,6 @@
     $password = $_POST['password'];
     $confirm_password = $_POST["confirm_password"];
 
-    // echo empty($userid);
-    // echo empty($userid) > 0;
-    // if (!empty($userid)) {
-    //     echo "message";
-    // } else {
-
-    // }
-
     if (empty($userid)) {
         echo "please enter a username";
       } elseif (empty($password)) {
@@ -39,33 +31,48 @@
       } elseif (empty($confirm_password)) {
         echo 'please confirm password';
       }
-
-        elseif (0) {
-        echo 'that username is already in use. Please enter a new one';
+        elseif ("$password" !== "$confirm_password") {
+        echo "passwords do not match \n";
+        // echo $password . "\n";
+        // echo $confirm_password . "\n";
       } 
-    //   elseif ('$password' == '$confirm_password') {
-    //     echo 'passwords do not match';
-    //     echo $password;
-    //     echo $confirm_password;
-    //   } 
       elseif (strlen($password)<10) {
         echo 'your password must be at least ten characters long';
-      } else {
-        // If the password and username conform to the conditions, then record them;
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        // Use placeholders ? for username and password values for the time being.
-        $sql = "INSERT INTO users VALUES(?, ?)";
+      } 
+      else {
+        $sql = "SELECT * FROM users WHERE username = ?";
         // Construct a prepared statement.
         $stmt = mysqli_prepare($db, $sql);
         // Bind the values for username and password that the user entered to the
         // statement AS STRINGS (that is what "ss" means). In other words, the
         // user input is strictly interpreted by the server as data and not as
         // porgram code part of the SQL statement.
-        mysqli_stmt_bind_param($stmt, "ss", $userid, $hashed_password);
+        mysqli_stmt_bind_param($stmt, "s", $userid);
         // Run the prepared statement.
         mysqli_stmt_execute($stmt);
-        echo "signup succesful";
+        $result = mysqli_stmt_get_result($stmt);
+        $num = mysqli_num_rows($result);
+
+        if ($num > 0) {
+          echo "that username is already in use. Please enter a new one";
+        } else {
+            // If the password and username conform to the conditions, then record them;
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            // Use placeholders ? for username and password values for the time being.
+            $sql = "INSERT INTO users VALUES(?, ?)";
+            // Construct a prepared statement.
+            $stmt = mysqli_prepare($db, $sql);
+            // Bind the values for username and password that the user entered to the
+            // statement AS STRINGS (that is what "ss" means). In other words, the
+            // user input is strictly interpreted by the server as data and not as
+            // porgram code part of the SQL statement.
+            mysqli_stmt_bind_param($stmt, "ss", $userid, $hashed_password);
+            // Run the prepared statement.
+            mysqli_stmt_execute($stmt);
+            echo "signup succesful";
+        }
+
+
+            
       }
-
-
 ?>
