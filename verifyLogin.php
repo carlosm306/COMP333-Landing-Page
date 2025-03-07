@@ -22,7 +22,7 @@ if ($row = mysqli_fetch_assoc($result)) {
 
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $userid;
-        header("Location: main.html");
+        header("Location: main.php");
     } else {
         echo "Wrong username or password";
     }
