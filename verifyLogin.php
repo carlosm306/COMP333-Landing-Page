@@ -1,6 +1,6 @@
 <?php
-include 'dbconnection.php';
 session_start();
+include 'dbconnection.php';
 
 $userid = $_POST['userid'];
 $password = $_POST['password'];
@@ -19,7 +19,10 @@ if ($row = mysqli_fetch_assoc($result)) {
     // Verify the password
     if (password_verify($password, $hashed_password)) {
         echo "Login Success";
+
         $_SESSION["loggedin"] = true;
+        $_SESSION["username"] = $userid;
+        header("Location: main.html");
     } else {
         echo "Wrong username or password";
     }

@@ -1,25 +1,8 @@
 <?php
-
-    // session_start();
-
-    // echo 'Welcome to page #1<br />';
-
-    // // session_id() is a built-in function used to get or set the session id for the
-    // // current session (https://www.php.net/manual/en/function.session-id.php).
-    // echo('PHPSESSID: ' . session_id());
-
-    // // Set session variables.
-    // // The "loggedin" session variable is used here to keep track if a user
-    // // is logged in.
-    // $_SESSION['animal']   = 'cat';
-    // // $_SESSION["loggedin"] = false;
-
-    // // Call page 2
-    // if($_SESSION["loggedin"]){
-    //     echo '<br /><a href="page_2.php">page 2</a>';
-    // }
-
+    session_start();
     include 'dbconnection.php';
+
+
     $userid = $_POST['userid'];
     $password = $_POST['password'];
     $confirm_password = $_POST["confirm_password"];
@@ -70,6 +53,9 @@
             // Run the prepared statement.
             mysqli_stmt_execute($stmt);
             echo "signup succesful";
+            $_SESSION["loggedin"] = true;
+            $_SESSION["username"] = $userid;
+            header("Location: main.html");
         }
 
 
