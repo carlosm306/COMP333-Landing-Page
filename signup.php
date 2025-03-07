@@ -56,6 +56,7 @@
             $_SESSION["loggedin"] = true;
             $_SESSION["username"] = $userid;
             header("Location: main.php");
+            exit;
         }
 
 

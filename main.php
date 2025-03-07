@@ -16,5 +16,10 @@ session_start();
     <div>
         Database here
     </div>
+    <form name="form" action="logout.php" method="POST">
+        <p>
+          <input type="submit" id="button" value="Logout" />
+        </p>
+    </form>
   </body>
 </html>
