@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+session_start();
+if ($_SESSION["loggedin"]>0) {
+  header("Location: main.php");
+  exit;
+}
+?>
+
 <html>
   <head>
     <title>Sign Up</title>
@@ -28,6 +36,7 @@
         <p>
           <input type="submit" id="button" value="Sign Up" />
         </p>
+        <a href="form.html" target="_blank" rel="noreferrer noopener"> Already a user? Click here to log in! </a> 
       </form>
     </div>
   </body>
