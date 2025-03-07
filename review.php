@@ -7,7 +7,7 @@
     $rating = $_POST["rating"];
     $review = $_POST["review"];
 
-    echo "check";
+    // echo "check";
 
         $sql = "INSERT INTO reviews (username, movie, rating, review) VALUES (?, ?, ?, ?)";
         // Construct a prepared statement.
