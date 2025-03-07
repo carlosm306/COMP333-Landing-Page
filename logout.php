@@ -1,8 +1,6 @@
 <?php
-include 'dbconnection.php' ; 
-
-session_start() ; 
-session_unset() ; 
-session_destroy() ;
-
-header("Location: index1.php") ; 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        session_destroy() ;
+        header("Location: landing_page.html") ; 
+    }
+?>
