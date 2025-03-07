@@ -17,6 +17,9 @@ include 'dbconnection.php';
     ?>
     <div>
     <?php 
+        echo '<a href="writereview.php"> Add a new review</a>';
+        echo "<br>";
+
         $sql = "SELECT * FROM reviews";
         $stmt = mysqli_prepare($db, $sql);
         mysqli_stmt_execute($stmt);
@@ -26,7 +29,17 @@ include 'dbconnection.php';
           // output data of each row
           while($row = mysqli_fetch_assoc($result)) {
             echo "id: " . $row["id"]. " - User: " . $row["username"]. " - Movie: " . $row["movie"]. 
-            " - Rating: " . $row["rating"]. " - Review: " . $row["review"]. "<br>";
+            " - Rating: " . $row["rating"]. " - Review: " . $row["review"];
+
+            echo '<a href="readreview.php?id=' . $row["id"] . '"> Read</a>';
+
+
+            if ($row["username"] == $_SESSION["username"]){
+              echo '<a href="updatereview.php?id=' . $row["id"] . '"> Update</a>';
+              echo '<a href="deletereview.php?id=' . $row["id"] . '"> Delete</a>';
+            }
+            echo "<br>";
+
           }
         } else {
           echo "write our first review";
