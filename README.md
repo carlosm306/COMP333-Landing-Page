@@ -11,7 +11,7 @@ The file style_sheet.css defines the style for all pages in the directory. The t
 Queries to create SQL tables:
 
 users:
-CREATE TABLE users( username VARCHAR(255), password VARCHAR(255) );
+CREATE TABLE users( username VARCHAR(255) PRIMARY KEY, password VARCHAR(255) );
 ![Screenshot from 2025-03-07 00-17-04](https://github.com/user-attachments/assets/27e68b15-bab9-475c-b21d-6a49292f8c1c)
 
 
