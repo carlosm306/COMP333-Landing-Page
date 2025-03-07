@@ -55,7 +55,7 @@
             echo "signup succesful";
             $_SESSION["loggedin"] = true;
             $_SESSION["username"] = $userid;
-            header("Location: main.html");
+            header("Location: main.php");
         }
 
 

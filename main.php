@@ -1,6 +1,7 @@
-
-
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 
 <html>
   <head>
@@ -9,6 +10,11 @@
   </head>
 
   <body>
-Database here
+    <?php 
+      echo $_SESSION["username"];
+    ?>
+    <div>
+        Database here
+    </div>
   </body>
 </html>
