@@ -1,27 +1,27 @@
 # COMP333-Landing-Page
 
-The web app that can be accessed by https://comp333.free.nf/landing_page.html was created by Carlos Munoz and Frankilin Mindich. The work was split 40% Carlos and 60% Franklin. Our webapp can be found using the link given. After creating the two tables below with the commands given in the screenshots, you must upload the following files to htdocs. (<br>)
+The web app that can be accessed by https://comp333.free.nf/landing_page.html was created by Carlos Munoz and Frankilin Mindich. The work was split 40% Carlos and 60% Franklin. Our webapp can be found using the link given. After creating the two tables below with the commands given in the screenshots, you must upload the following files to htdocs. <br>
 
-copyrightnotice.html (<br>)
-form.html (<br>)
-landing_page.html (<br>)
-learnmore.html (<br>)
-map.html (<br>)
-style_sheet.css (<br>)
+copyrightnotice.html <br>
+form.html <br>
+landing_page.html <br>
+learnmore.html <br>
+map.html <br>
+style_sheet.css <br>
 
-dbconnection.php (must be changed to localhost, root, etc, to be ran locally) (<br>)
-deleteop.php (<br>)
-deletereview.php (<br>)
-logout.php (<br>)
-main.php (<br>)
-readreview.php (<br>)
-review.php (<br>)
-signup_functional.php (<br>)
-signup.php (<br>)
-update.php (<br>)
-updatereview.php (<br>)
-verifyLogin.php (<br>)
-writereview.php (<br>)
+dbconnection.php (must be changed to localhost, root, etc, to be ran locally) <br>
+deleteop.php <br>
+deletereview.php <br>
+logout.php <br>
+main.php <br>
+readreview.php <br>
+review.php <br>
+signup_functional.php <br>
+signup.php <br>
+update.php <br>
+updatereview.php <br>
+verifyLogin.php <br>
+writereview.php <br>
 
 Queries to create SQL tables:
 
@@ -38,7 +38,7 @@ CREATE TABLE reviews( id int(10) PRIMARY KEY AUTO_INCREMENT, username VARCHAR(25
 
 PHPmyAdmin for Carlos 
 
-![phpmyadmin.png](Users/carlosmunoz/Desktop/COMP333/COMP333-Landing-Page/phpmyadmin.png)
+![phpmyadmin.png](phpmyadmin.png)
 
 
 # The following information pertains to Homework 1
