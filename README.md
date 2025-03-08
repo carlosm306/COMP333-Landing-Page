@@ -1,6 +1,6 @@
 # COMP333-Landing-Page
 
-The web app that can be accessed by https://comp333.free.nf/landing_page.html was created by Carlos Munoz and Frankilin Mindich. The work was split 40% Carlos and 60% Franklin. Our webapp can be found using the link given. After creating the two tables below with the commands given in the screenshots, you must upload the following files to htdocs. Our app has a sign up feature, where once you sign up, you are logged in and can begin to write movie reviews. These reviews can be updated, read, and deleted when you are logged in as you follow the hyperlinks. There is also a logout function throughout the process. <br>
+We would like to use one of our four late days for this assignment. The web app that can be accessed by https://comp333.free.nf/landing_page.html was created by Carlos Munoz and Frankilin Mindich. The work was split 40% Carlos and 60% Franklin. Our webapp can be found using the link given. After creating the two tables below with the commands given in the screenshots, you must upload the following files to htdocs. Our app has a sign up feature, where once you sign up, you are logged in and can begin to write movie reviews. These reviews can be updated, read, and deleted when you are logged in as you follow the hyperlinks. There is also a logout function throughout the process. <br>
 
 copyrightnotice.html <br>
 form.html <br>
