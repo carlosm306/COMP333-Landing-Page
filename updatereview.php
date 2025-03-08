@@ -23,7 +23,8 @@ $revid = $_GET["id"];
 
         <p>
           <label> Rating: </label>
-          <input type="text" id="rating" name="rating" />
+          <input type="int" id="rating" name="rating" 
+          maxlength="1" placeholder="Number 1-9" />
         </p>
 
         <p>
