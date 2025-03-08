@@ -29,7 +29,7 @@
         // Bind the values for username and password that the user entered to the
         // statement AS STRINGS (that is what "ss" means). In other words, the
         // user input is strictly interpreted by the server as data and not as
-        // porgram code part of the SQL statement.
+        // program code part of the SQL statement.
         mysqli_stmt_bind_param($stmt, "s", $userid);
         // Run the prepared statement.
         mysqli_stmt_execute($stmt);
