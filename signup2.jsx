@@ -1,6 +1,8 @@
 import { Link } from "expo-router";
 import { Text, View, TextInput, StyleSheet } from "react-native";
 import { Header } from "react-native/Libraries/NewAppScreen";
+import { useState } from "react";
+
 
 export default function Signup() {
   return (
@@ -13,7 +15,28 @@ export default function Signup() {
     </View>
   );
 }
+const [User, setUser] = useState({
+        username: "",
+        password: "",
+        cpassword: "", 
+    }) ; 
 
+ const Sendsignup = () => {
+        if ((User.rating= "") || (User.password="") || (User.password != User.cpassword)) 
+            return Alert.alert("Please fill out all fields correctly") ;
+        else {
+        try{
+            axios.post("localhost", {
+                username: "", // these should be replaced by inputs in the form
+                password: "",
+                cpassword: "",
+              }); 
+            navigation.navigate("/") 
+        } catch(err){
+            console.log(err)
+        }
+    }
+    }
 
 
 const styles= StyleSheet.create({

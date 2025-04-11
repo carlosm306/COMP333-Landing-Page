@@ -1,44 +1,83 @@
 
 
+import { Link } from "expo-router";
+import { Text, View, TextInput, Button, Alert } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react"
-import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react" ; 
+import { NavigationContainer } from "@react-navigation/native";
+import {axios} from "axios"
 
-const Addreview = () => {
-    const [review, setReview] = useState({
+export default function Updatereview () {
+    const [Review, setReview] = useState({
         movie: "",
         rating: null,
-        Review: ""
+        review: "",
     }) ; 
-    const navigate= useNavigate()
-    const location = useLocation()
-    
-    const reviewId = location.pathname.split("/")[2]
 
-    const handleChange = (e) => {
-        setReview(prev => ({...prev, [e.target.name]: e.target.value }))
-    }
-    const handleClick = async e => {
-        e.preventDefult()
+    const Insertdata = () => {
+        if ((Review.rating= null) || (Review.movie="") || (Review.review = "")) 
+            return Alert.alert("Please fill out all fields") ;
+        else {
         try{
-            await axios.post(`http://localhost/COMP333-Landing-Page/index.php/user/writereview/`, {
-                username: "yourUsername", // these should be replaced by inputs in the form
-                movie: "yourMovie",
-                review: "yourReview",
-                rating: "yourRating"
-              });
-        } catch(err){
+            axios.put("http://localhost/index.php/user/list?limit=20", review) 
             console.log(err)
         }
     }
+    }
     return (
-        <div className="form">
-            <h1> Add New Review </h1>
-            <input type="text" placeholder="movie" onChange={handleChange} name="movie" />
-            <input type="number" placeholder="rating" onChange={handleChange} name="rating" />
-            <input type="text" placeholder="review" onChange={handleChange} name="Review" />
-            <button onClick={handleClick}> Update </button>
-        </div>
+        <View className="form">
+            <Text style={styles.titletext}> Update review </Text>
+            <TextInput type="text" placeholder="movie" onChange={setReview} name="movie" /> 
+            <TextInput type="number" placeholder="rating" onChange={setReview} name="rating" />
+            <TextInput type="text" placeholder="review" onChange={setReview} name="review" />
+            <Button title= "Add" onPress={() => Insertdata}/>  
+        </View>
         
     ) ; 
+
 } ; 
 
+const styles= StyleSheet.create({
+    container : {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "aquamarine",
+    },
+    titletext: {
+      color: "black",
+      fontSize: 50 , 
+      alignItems: "center" , 
+      fontWeight: "bold",
+  
+    },
+    text: {
+      color: "black",
+      fontSize: 20,
+      alignItems: "center" , 
+      justifyContent: "center",
+    }, 
+    space: {
+      marginBottom: 40 , 
+    },
+    input: {
+        fontsize: 30,
+        color: "black",
+        justifyContent: "center",
+        alignItems: "center",
+        borderColor: "black",
+        borderWidth: 3,
+        padding: 5,
+        margin: 5,
+    },
+    background: { 
+      flex: 1,
+      backgroundColor: "aquamarine"
+    },
+    button: {
+      fontSize: 20 , 
+      textDecorationLine: "underline",
+      color: "purple",
+    },
+  });
