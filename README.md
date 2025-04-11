@@ -1,5 +1,7 @@
 # COMP333-Landing-Page
 
+The backend code was altered to match the style of the rest api.
+
 
 In addition to the steps under Homework 2 for setting up the database, one now needs to give themself permission to use the database by entering the following code into mySQLi:
 
