@@ -1,8 +1,12 @@
 # COMP333-Landing-Page
+To use the app, navigate through the jsx files, with titles describing their function. The backend is now located in folders and files with names matching the rest api tutorial linked to the homwork. Work was split 50/50 with Carlos focusing more so on the frontend and Franklin focused more so on the backend. 
 
-The backend code was altered to match the style of the rest api.
+We're using 2 late days. 
 
+The backend code was altered to match the style of the rest api, for most of the functions. Sign in related functions took the old form, to align with the instruction of keeping that functionality to the backend, as opposed 
+to a token based approach. 
 
+In terms of setting up mySQL:
 In addition to the steps under Homework 2 for setting up the database, one now needs to give themself permission to use the database by entering the following code into mySQLi:
 
 GRANT ALL PRIVILEGES ON `app-db`.* TO 'demo'@'localhost' IDENTIFIED BY 'demo';
