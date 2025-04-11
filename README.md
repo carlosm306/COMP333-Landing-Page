@@ -1,5 +1,23 @@
 # COMP333-Landing-Page
 
+The backend code was altered to match the style of the rest api.
+
+
+In addition to the steps under Homework 2 for setting up the database, one now needs to give themself permission to use the database by entering the following code into mySQLi:
+
+GRANT ALL PRIVILEGES ON `app-db`.* TO 'demo'@'localhost' IDENTIFIED BY 'demo';
+FLUSH PRIVILEGES;
+
+Franklin's screenshots
+
+Get
+![Screenshot from 2025-04-10 23-27-30](https://github.com/user-attachments/assets/5dc39bed-5700-4043-b0b5-2580b6e86e05)
+Post
+![Screenshot from 2025-04-10 23-25-15](https://github.com/user-attachments/assets/2431af96-4dee-490d-a562-1ac6792f21f9)
+
+
+# The following information pertains to Homework 2
+
 We would like to use one of our four late days for this assignment. The web app that can be accessed by https://comp333.free.nf/landing_page.html was created by Carlos Munoz and Frankilin Mindich. The work was split 40% Carlos and 60% Franklin. Our webapp can be found using the link given. After creating the two tables below with the commands given in the screenshots, you must upload the following files to htdocs. Our app has a sign up feature, where once you sign up, you are logged in and can begin to write movie reviews. These reviews can be updated, read, and deleted when you are logged in as you follow the hyperlinks. There is also a logout function throughout the process. <br>
 
 copyrightnotice.html <br>

@@ -20,6 +20,7 @@ export default function Addreview () {
             return Alert.alert("Please fill out all fields") ;
         else {
         try{
+
             axios.post(`http://localhost/COMP333-Landing-Page/index.php/user/writereview/`, {
                 username: "", // these should be replaced by inputs in the form
                 movie: "",
@@ -27,11 +28,7 @@ export default function Addreview () {
                 rating: null, 
               }); 
             navigation.navigate("/readreview") 
-        } catch(err){
-            console.log(err)
-        }
-    }
-    }
+
     return (
         <View className="form">
             <Text style={styles.titletext}> Add new review </Text>

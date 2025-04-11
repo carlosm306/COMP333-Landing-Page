@@ -1,7 +1,7 @@
 
 
 <?php
-$db = mysqli_connect("185.27.134.176","if0_38465088","qBO4wo0Bjy","if0_38465088_app_db");
+$db = mysqli_connect('localhost', 'root', '', 'app-db');
 
 if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: "

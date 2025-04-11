@@ -20,8 +20,7 @@ export default function Updatereview () {
             return Alert.alert("Please fill out all fields") ;
         else {
         try{
-            axios.put("http://localhost/index.php/user/list?limit=20", review) // Don't know how to connect to server 
-        } catch(err){
+            axios.put("http://localhost/index.php/user/list?limit=20", review) 
             console.log(err)
         }
     }
