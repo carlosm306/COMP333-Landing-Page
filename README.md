@@ -1,8 +1,17 @@
 # COMP333-Landing-Page
 
 
-![Screenshot from 2025-04-09 00-57-11](https://github.com/user-attachments/assets/a28d5464-f642-41d5-b8fb-dc34b9247cbc)
-![Screenshot from 2025-04-09 00-57-23](https://github.com/user-attachments/assets/6682c804-6379-473b-b4e9-c65c5a7bfa18)
+In addition to the steps under Homework 2 for setting up the database, one now needs to give themself permission to use the database by entering the following code into mySQLi
+
+GRANT ALL PRIVILEGES ON `app-db`.* TO 'demo'@'localhost' IDENTIFIED BY 'demo';
+FLUSH PRIVILEGES;
+
+Franklin
+Get
+![Screenshot from 2025-04-10 23-27-30](https://github.com/user-attachments/assets/5dc39bed-5700-4043-b0b5-2580b6e86e05)
+Post
+![Screenshot from 2025-04-10 23-25-15](https://github.com/user-attachments/assets/2431af96-4dee-490d-a562-1ac6792f21f9)
+
 
 # The following information pertains to Homework 2
 
