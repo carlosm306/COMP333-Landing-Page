@@ -1,4 +1,5 @@
 <?php
+
 require_once PROJECT_ROOT_PATH . "/Model/Database.php";
 class UserModel extends Database
 {
@@ -31,6 +32,11 @@ class UserModel extends Database
         return $this->execute($sql, ["ssss", $username, $movie, $rating, $review]);
     }
 
-
+    public function deleteReview($username, $movie, $rating, $review)
+    {
+        $revid = $_POST["id"];
+        $sql = "DELETE FROM reviews WHERE id = ?";
+        return $this->execute($sql, ["s", $revid]);
+    }
 
 }

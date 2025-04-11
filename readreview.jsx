@@ -21,7 +21,10 @@ const Reviews = () => {
 
   const handleDelete = async (id) => {
     try{
-      await axios.delete("localhost"+id)/* Not sure what server goes here */
+      await axios.post("http://localhost/COMP333-Landing-Page/index.php/user/delete",
+      {
+          id: "post id", // these should be replaced by inputs in the form
+      });
       window.location.reload()
     } catch(err){
       console.log(err)
