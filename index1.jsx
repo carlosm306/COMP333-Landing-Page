@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import { Text, View, StyleSheet } from "react-native";
 import { Header } from "react-native/Libraries/NewAppScreen";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function Index() {
   return (
@@ -9,7 +10,8 @@ export default function Index() {
       <Text style={[styles.titletext, styles.space]}> AnimalMovies</Text>
       <Text style={styles.text}> Watch and rate your favorite animal movies here, such as... </Text>
       <Text style={styles.text}> Possible Image </Text>
-      <Link href="/login" style={styles.text}> Login Here</Link>
+      <Link href="/signup" style={styles.button}> Click here to sign up </Link>
+      <Link href="/login" style={styles.button}> Click here to log in </Link>
     </View>
 
   );

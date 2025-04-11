@@ -1,17 +1,19 @@
 import { Link } from "expo-router";
 import { Text, View, TextInput, StyleSheet } from "react-native";
 import { Header } from "react-native/Libraries/NewAppScreen";
-import "index.jsx"
+import { useState } from "react";
 
 export default function Login() {
   return (
-    <View
-      style={styles.container}>
+    <View style={[styles.text, styles.background]}>
+      <Link href="/" style={[styles.text, styles.button]}> Back to home page </Link>
+      <Text style={styles.titletext}> Login </Text>
       <TextInput style={styles.input}> Please enter username </TextInput> 
       <TextInput style={styles.input}> Please enter password</TextInput>
+      <Link href="/readreview" style={[styles.text, styles.button]}> Read review test </Link>
     </View>
   );
-}
+} ; 
 
 const styles= StyleSheet.create({
     container : {
@@ -21,14 +23,13 @@ const styles= StyleSheet.create({
       backgroundColor: "aquamarine",
     },
     titletext: {
-      flex: 1,
       color: "black",
-      fontSize: 45 , 
+      fontSize: 50 , 
       alignItems: "center" , 
-      fontWeight: "bold"
+      fontWeight: "bold",
+  
     },
     text: {
-      flex : 3 ,
       color: "black",
       fontSize: 20,
       alignItems: "center" , 
@@ -38,13 +39,22 @@ const styles= StyleSheet.create({
       marginBottom: 40 , 
     },
     input: {
-        fontsize: 45,
+        fontsize: 30,
         color: "black",
         justifyContent: "center",
         alignItems: "center",
         borderColor: "black",
         borderWidth: 3,
-        padding: 10,
-        margin: 10,
+        padding: 5,
+        margin: 5,
+    },
+    background: { 
+      flex: 1,
+      backgroundColor: "aquamarine"
+    },
+    button: {
+      fontSize: 20 , 
+      textDecorationLine: "underline",
+      color: "purple",
     },
   });
