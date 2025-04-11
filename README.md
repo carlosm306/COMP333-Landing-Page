@@ -1,12 +1,13 @@
 # COMP333-Landing-Page
 
 
-In addition to the steps under Homework 2 for setting up the database, one now needs to give themself permission to use the database by entering the following code into mySQLi
+In addition to the steps under Homework 2 for setting up the database, one now needs to give themself permission to use the database by entering the following code into mySQLi:
 
 GRANT ALL PRIVILEGES ON `app-db`.* TO 'demo'@'localhost' IDENTIFIED BY 'demo';
 FLUSH PRIVILEGES;
 
-Franklin
+Franklin's screenshots
+
 Get
 ![Screenshot from 2025-04-10 23-27-30](https://github.com/user-attachments/assets/5dc39bed-5700-4043-b0b5-2580b6e86e05)
 Post
