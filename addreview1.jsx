@@ -17,7 +17,12 @@ const Addreview = () => {
     const handleClick = async e => {
         e.preventDefult()
         try{
-            await axios.post("localhost", review) /* Don't know how to connect to server */
+            await axios.post(`http://localhost/COMP333-Landing-Page/index.php/user/writereview/`, {
+                username: "yourUsername", // these should be replaced by inputs in the form
+                movie: "yourMovie",
+                review: "yourReview",
+                rating: "yourRating"
+              });
             navigate("/readreview")
         } catch(err){
             console.log(err)

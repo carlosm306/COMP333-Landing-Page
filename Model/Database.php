@@ -26,20 +26,51 @@ class Database
         }
         return false;
     }
-    private function executeStatement($query = "" , $params = [])
+    // private function executeStatement($query = "" , $params = [])
+    // {
+    //     try {
+    //         $stmt = $this->connection->prepare( $query );
+    //         if($stmt === false) {
+    //             throw New Exception("Unable to do prepared statement: " . $query);
+    //         }
+    //         if( $params ) {
+    //             $stmt->bind_param($params[0], $params[1]);
+    //         }
+    //         $stmt->execute();
+    //         return $stmt;
+    //     } catch(Exception $e) {
+    //         throw New Exception( $e->getMessage() );
+    //     }	
+    // }
+    public function execute($query = "", $params = [])
     {
         try {
-            $stmt = $this->connection->prepare( $query );
-            if($stmt === false) {
-                throw New Exception("Unable to do prepared statement: " . $query);
+            $stmt = $this->executeStatement($query, $params);
+            $stmt->close();
+            return true;
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+
+    private function executeStatement($query = "", $params = [])
+    {
+        try {
+            $stmt = $this->connection->prepare($query);
+            if ($stmt === false) {
+                throw new Exception("Unable to prepare statement: " . $query);
             }
-            if( $params ) {
-                $stmt->bind_param($params[0], $params[1]);
+
+            if (!empty($params)) {
+                $types = array_shift($params);
+                $stmt->bind_param($types, ...$params);
             }
+
             $stmt->execute();
             return $stmt;
-        } catch(Exception $e) {
-            throw New Exception( $e->getMessage() );
-        }	
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
     }
 }
