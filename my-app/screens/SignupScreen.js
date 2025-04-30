@@ -403,6 +403,9 @@ const SignupScreen = ({ navigation }) => {
       // Save token or user info if provided (optional)
       await AsyncStorage.setItem('userToken', data.token || 'mock-token');
       await AsyncStorage.setItem('username', username);
+      navigation.navigate('Reviews')
+
+
 
 
       // // Navigate to review list screen

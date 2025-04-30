@@ -38,66 +38,6 @@ const ReviewListScreen = () => {
     fetchData();
   }, []);
 
-// useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const storedUsername = await AsyncStorage.getItem('username');
-  
-//         if (!storedUsername) {
-//           // Redirect to login if not signed in
-//           navigation.navigate('SignIn');
-//           return;
-//         }
-  
-//         setUsername(storedUsername);
-  
-//         const response = await axios.get('http://172.21.47.1/Backend/index.php/user/list');
-//         setReviews(response.data);
-//       } catch (error) {
-//         Alert.alert('Error', 'Failed to fetch reviews');
-//       }
-//     };
-  
-//     fetchData();
-//   }, []);
-  
-// useEffect(() => {
-//     let isMounted = true;
-  
-//     const fetchData = async () => {
-//       try {
-//         const storedUsername = await AsyncStorage.getItem('username');
-  
-//         if (!storedUsername && isMounted) {
-//         //   Safe redirect to SignIn
-//           setTimeout(() => {
-//         //     navigation.reset({
-//         //       index: 0,
-//         //       routes: [{ name: 'SignIn' }],
-//         //     });
-//         navigation.navigate('SignIn');
-//           }, 0);
-//           return;
-//         }
-  
-//         if (isMounted) {
-//           setUsername(storedUsername);
-//           const response = await axios.get('http://172.21.47.1/Backend/index.php/user/list');
-//           setReviews(response.data);
-//         }
-//       } catch (error) {
-//         Alert.alert('Error', 'Failed to fetch reviews');
-//       }
-//     };
-  
-//     fetchData();
-  
-//     return () => {
-//       isMounted = false;
-//     };
-//   }, []);
-  
-
   const handleDelete = async (id) => {
     Alert.alert(
       "Confirm Delete",
@@ -106,9 +46,12 @@ const ReviewListScreen = () => {
         { text: "Cancel", style: "cancel" },
         {
           text: "Delete", style: "destructive", onPress: async () => {
-            try {
-              await axios.delete(`http://172.21.47.1/Backend/index.php/user/delete/${id}`);
-              setReviews(reviews.filter(review => review.id !== id));
+              try {
+                const response = await axios.post('http://172.21.47.1/Backend/index.php/user/delete', {
+                  id
+                });
+          
+                Alert.alert("Signup Response", response.data);
             } catch (error) {
               Alert.alert('Error', 'Failed to delete review');
             }
@@ -177,7 +120,15 @@ const handleAddReview = async () => {
         <Text>By: {item.username}</Text>
       </Card.Content>
       <Card.Actions>
-        <Button onPress={() => navigation.navigate('ReviewDetail', { id: item.id })}>View</Button>
+        {/* <Button onPress={() => navigation.navigate('ReviewDetail', { id: item.id })}>View</Button>
+         */}
+         <Button
+        mode="outlined"
+        onPress={() => navigation.navigate('ReviewDetail', { item })}
+        >
+        View
+        </Button>
+
         {item.username === username && (
           <>
             <Button onPress={() => navigation.navigate('EditReview', { review: item })}>Edit</Button>
@@ -192,10 +143,7 @@ const handleAddReview = async () => {
     try {
       await AsyncStorage.removeItem('username');
       await AsyncStorage.removeItem('userToken');
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'SignIn' }],
-      });
+      navigation.navigate('SignUp')
     } catch (error) {
       Alert.alert('Error', 'Failed to log out');
     }
