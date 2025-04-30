@@ -108,6 +108,8 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Alert, KeyboardAvoidingView } from 'react-native';
 import { TextInput, Button, Card, Title } from 'react-native-paper';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const SignInScreen = ({ navigation, onSignInSuccess }) => {  // Add `navigation` prop here
   const [username, setUsername] = useState('');
@@ -119,6 +121,8 @@ const SignInScreen = ({ navigation, onSignInSuccess }) => {  // Add `navigation`
       Alert.alert('Please enter both username and password.');
       return;
     }
+
+    
 
     setLoading(true);
     try {
@@ -136,6 +140,9 @@ const SignInScreen = ({ navigation, onSignInSuccess }) => {  // Add `navigation`
       if (!response.ok) {
         throw new Error(data?.error || 'Login failed');
       }
+
+      await AsyncStorage.setItem('userToken', data.token || 'mock-token');
+      await AsyncStorage.setItem('username', username);
 
       // Call success handler (e.g. to set auth state in App.js)
       onSignInSuccess(data.user);
