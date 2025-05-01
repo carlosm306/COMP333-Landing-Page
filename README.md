@@ -1,6 +1,6 @@
 # COMP333-Landing-Page
 
-You'll want to download the whole directory into your ht docs folder. You can navigate through the app by launching npx expo start -c, and starting out in app.js, as you would expect. Depending on your setup, you might have to download dependencies but those should be indicated when you try to launch the program.
+You'll want to download the whole directory into your ht docs folder. You can navigate through the app by launching npx expo start -c, and starting out in app.js, as you would expect. Depending on your setup, you might have to download dependencies but those should be indicated when you try to launch the program. Replace the IP address with your own in the frontend files.
 
 THIS IS IMPORTANT: You need to move the folder "Backend" out from this directory and into your ht docs directory. The Backend folder includes the Tests folder, which can move with it. In Tests, the file BackendTests.php includes the functions for problem 1. 
 
