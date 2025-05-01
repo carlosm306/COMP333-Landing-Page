@@ -14,7 +14,12 @@ class BackendTests extends PHPUnit\Framework\TestCase
       $this->assertEquals(200, $response->getStatusCode());
    }
 
-   public function testPost_login() {
+   public function testGet_UserList() {
+    $response = $this->client->request('GET', 'Backend/index.php/user/listusers');
+    $this->assertEquals(200, $response->getStatusCode());
+ }
+
+   public function testPost_LoginUser() {
     $response = $this->client->request('POST', 'Backend/index.php/user/login', [
         'headers' => [
             'Content-Type' => 'application/json',
@@ -30,7 +35,7 @@ class BackendTests extends PHPUnit\Framework\TestCase
     $this->assertEquals(200, $response->getStatusCode());
  }
 
- public function testPost_signup() {
+ public function testPost_CreateUser() {
     $randomUsername = 'testuser_' . uniqid();
     $response = $this->client->request('POST', 'Backend/index.php/user/signup', [
         'headers' => [
@@ -53,7 +58,7 @@ class BackendTests extends PHPUnit\Framework\TestCase
     $this->assertEquals(201, $response->getStatusCode());
  }
 
- public function testPost_loginFailed() {
+ public function testPost_FailedLogin() {
     $response = $this->client->request('POST', 'Backend/index.php/user/login', [
         'headers' => [
             'Content-Type' => 'application/json',
@@ -65,7 +70,7 @@ class BackendTests extends PHPUnit\Framework\TestCase
             "confirm_password"=> "1234567891011asd"
         ],
     ]);
-    echo $response->getBody()->getContents();
+    // echo $response->getBody()->getContents();
     $this->assertEquals(200, $response->getStatusCode());
  }
 
