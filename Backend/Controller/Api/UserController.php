@@ -135,6 +135,42 @@ class UserController extends BaseController
         }
     }
 
+    public function editreviewAction()
+    {
+        $strErrorDesc = '';
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+
+        if (strtoupper($requestMethod) == 'POST') {
+            try {
+                $userModel = new UserModel();
+                $data = json_decode(file_get_contents("php://input"), true);
+
+                if (isset($data["id"], $data["movie"], $data["rating"], $data["review"])) {
+                    $success = $userModel->editReview($data["id"], $data["movie"], $data["rating"], $data["review"]);
+                    $responseData = json_encode([
+                        "message" => $success ? "Review updated" : "Review update failed"
+                    ]);
+                } else {
+                    $strErrorDesc = "All fields must be provided (id, movie, rating, review).";
+                    $strErrorHeader = 'HTTP/1.1 400 Bad Request';
+                }
+            } catch (Error $e) {
+                $strErrorDesc = $e->getMessage() . ' Something went wrong! Please contact support.';
+                $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+            }
+        } else {
+            $strErrorDesc = 'Method not supported';
+            $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
+        }
+
+        if (!$strErrorDesc) {
+            $this->sendOutput($responseData, ['Content-Type: application/json', 'HTTP/1.1 200 OK']);
+        } else {
+            $this->sendOutput(json_encode(['error' => $strErrorDesc]), ['Content-Type: application/json', $strErrorHeader]);
+        }
+    }
+
+
     // public function verifyloginAction() {
     //     // so here you'll want to flip the logic -- throw 
     //     // a warning if the user DOES NOT EXIST

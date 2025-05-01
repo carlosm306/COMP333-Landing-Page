@@ -483,8 +483,8 @@ const ReviewListScreen = ({ onLogout }) => {
     }
 
     try {
-      await axios.post('http://172.21.47.1/Backend/index.php/user/writereview', {
-        // id: editingId,
+      await axios.post('http://172.21.47.1/Backend/index.php/user/editreview', {
+        id: editingId,
         movie: newReview.movie,
         rating: newReview.rating,
         review: newReview.review,
@@ -533,7 +533,7 @@ const ReviewListScreen = ({ onLogout }) => {
         </Button>
         {item.username === username && (
           <>
-            {/* <Button
+            <Button
               onPress={() => {
                 setNewReview({
                   movie: item.movie,
@@ -545,7 +545,7 @@ const ReviewListScreen = ({ onLogout }) => {
               }}
             >
               Edit
-            </Button> */}
+            </Button>
             <Button onPress={() => handleDelete(item.id)} textColor="red">
               Delete
             </Button>
