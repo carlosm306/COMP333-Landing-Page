@@ -4,7 +4,7 @@ You'll want to download the whole directory into your ht docs folder. You can na
 
 THIS IS IMPORTANT: You need to move the folder "Backend" out from this directory and into your ht docs directory. The Backend folder includes the Tests folder, which can move with it. In Tests, the file BackendTests.php includes the functions for problem 1. 
 
-Problem 2: We used chat GPT to create that last feature, by asking it to create a new user for each test, and delete it, but to make sure that it never would delete a real user.
+Problem 2: We used chat GPT to create the last feature indicated below (Additional Unit Test Functionality), by asking it to create a new user for each test, and delete it, but to make sure that it never would delete a real user.
 
 Problem 3:
 
