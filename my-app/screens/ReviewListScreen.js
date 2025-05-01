@@ -14,7 +14,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
-const ReviewListScreen = () => {
+const ReviewListScreen = ({onLogout}) => {
   const [reviews, setReviews] = useState([]);
   const [username, setUsername] = useState('');
   const [showDialog, setShowDialog] = useState(false);
@@ -139,15 +139,32 @@ const handleAddReview = async () => {
     </Card>
   );
 
-  const handleLogout = async () => {
+//   const handleLogout = async () => {
+//     try {
+//       await AsyncStorage.removeItem('username');
+//       await AsyncStorage.removeItem('userToken');
+//       onLogout(); 
+//     } catch (error) {
+//       Alert.alert('Error', 'Failed to log out');
+//     }
+//   };
+
+const handleLogout = async () => {
     try {
       await AsyncStorage.removeItem('username');
       await AsyncStorage.removeItem('userToken');
-      navigation.navigate('SignUp')
+  
+      if (typeof onLogout !== 'function') {
+        throw new Error('onLogout is not a function');
+      }
+  
+      onLogout();
     } catch (error) {
+      console.error('Logout error:', error); // More detailed error output
       Alert.alert('Error', 'Failed to log out');
     }
   };
+  
   
 
   return (
