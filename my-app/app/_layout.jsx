@@ -9,5 +9,6 @@ export default function RootLayout() {
   <Stack.Screen name="readreview" options={{headerTitle: "Read reviews"}}/>
   <Stack.Screen name="addreview" options={{headerTitle: "Add reviews"}}/>
   <Stack.Screen name="updatereview" options={{headerTitle: "Update reviews"}}/>
+  <Stack.Screen name="game" options={{headerTitle: "Flappy Flamingo"}}/>
   </Stack>;
 }
