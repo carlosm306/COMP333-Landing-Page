@@ -11,6 +11,7 @@ export default function Login() {
       <TextInput style={styles.input}> Please enter username </TextInput> 
       <TextInput style={styles.input}> Please enter password</TextInput>
       <Link href="/readreview" style={[styles.text, styles.button]}> Read review </Link>
+      <Link href="/game" style={[styles.text, styles.button]}> Play game </Link>
     </View>
   );
 } ; 
