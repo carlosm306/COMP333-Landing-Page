@@ -453,6 +453,11 @@ const SignupScreen = ({ navigation, onSignInSuccess }) => {
           <Button onPress={() => navigation.navigate('SignIn')} style={styles.link}>
             Already have an account? Sign In
           </Button>
+
+          <Button onPress={() => navigation.navigate('Game')} style={styles.link}>
+            Not sure yet? Play game
+          </Button>
+
         </Card.Content>
       </Card>
     </KeyboardAvoidingView>

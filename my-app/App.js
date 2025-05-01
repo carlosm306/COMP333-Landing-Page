@@ -8,6 +8,7 @@ import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignupScreen';
 import ReviewListScreen from './screens/ReviewListScreen';
 import ReviewDetailScreen from './screens/ReviewDetailScreen';
+import Game from './app/game';
 
 
 const Stack = createNativeStackNavigator();
@@ -20,8 +21,7 @@ const AuthStack = ({ onSignInSuccess }) => (
     <Stack.Screen name="SignUp">
   {(props) => <SignUpScreen {...props} onSignInSuccess={onSignInSuccess} />}
     </Stack.Screen>
-
-    {/* <Stack.Screen name="SignUp" component={SignUpScreen} /> */}
+    <Stack.Screen name="Game" component={Game} />
     {/* <Stack.Screen name="Reviews">
       {(props) => <ReviewListScreen {...props} onLogout={onLogout} />}
     </Stack.Screen> */}
