@@ -34,7 +34,7 @@ const SignInScreen = ({ navigation, onSignInSuccess }) => {  // Add `navigation`
       // Save the token and username in AsyncStorage
       await AsyncStorage.setItem('userToken', data.token || 'mock-token');
       await AsyncStorage.setItem('username', username);
-      navigation.navigate('Reviews')
+      onSignInSuccess();
 
     //   // Call success handler (e.g. to set auth state in App.js)
     //   onSignInSuccess(data.user);

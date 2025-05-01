@@ -363,7 +363,7 @@ import { View, StyleSheet, Alert, KeyboardAvoidingView } from 'react-native';
 import { TextInput, Button, Card, Title } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const SignupScreen = ({ navigation }) => {
+const SignupScreen = ({ navigation, onSignInSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -402,18 +402,8 @@ const SignupScreen = ({ navigation }) => {
 
       // Save token or user info if provided (optional)
       await AsyncStorage.setItem('userToken', data.token || 'mock-token');
-      await AsyncStorage.setItem('username', username);
-      navigation.navigate('Reviews')
-
-
-
-
-      // // Navigate to review list screen
-      // navigation.reset({
-      //   index: 0,
-      //   routes: [{ name: 'Reviews' }],
-      // });
-      navigation.navigate('Reviews');
+      // await AsyncStorage.setItem('username', username);
+      onSignInSuccess();
     } catch (error) {
       Alert.alert('Signup Error', error.message);
     } finally {

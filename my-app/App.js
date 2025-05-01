@@ -17,10 +17,14 @@ const AuthStack = ({ onSignInSuccess }) => (
     <Stack.Screen name="SignIn">
       {(props) => <SignInScreen {...props} onSignInSuccess={onSignInSuccess} />}
     </Stack.Screen>
-    <Stack.Screen name="SignUp" component={SignUpScreen} />
-    <Stack.Screen name="Reviews">
-      {(props) => <ReviewListScreen {...props} onLogout={onLogout} />}
+    <Stack.Screen name="SignUp">
+  {(props) => <SignUpScreen {...props} onSignInSuccess={onSignInSuccess} />}
     </Stack.Screen>
+
+    {/* <Stack.Screen name="SignUp" component={SignUpScreen} /> */}
+    {/* <Stack.Screen name="Reviews">
+      {(props) => <ReviewListScreen {...props} onLogout={onLogout} />}
+    </Stack.Screen> */}
 
   </Stack.Navigator>
 );
@@ -58,7 +62,7 @@ export default function App() {
         {isSignedIn ? (
           <AppStack onLogout={() => setIsSignedIn(false)} />
         ) : (
-          <AuthStack onSignIn={() => setIsSignedIn(true)} />
+          <AuthStack onSignInSuccess={() => setIsSignedIn(true)} />
         )}
       </NavigationContainer>
     </PaperProvider>
