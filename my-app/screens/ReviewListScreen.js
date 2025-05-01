@@ -48,10 +48,11 @@ const ReviewListScreen = ({onLogout}) => {
           text: "Delete", style: "destructive", onPress: async () => {
               try {
                 const response = await axios.post('http://172.21.47.1/Backend/index.php/user/delete', {
-                  id
+                  id: id
                 });
           
-                Alert.alert("Signup Response", response.data);
+                Alert.alert("Delete Response", response.data);
+                fetchData();
             } catch (error) {
               Alert.alert('Error', 'Failed to delete review');
             }
@@ -95,7 +96,7 @@ const handleAddReview = async () => {
         return;
       }
   
-      await axios.post('http://127.0.0.1/Backend/index.php/review/create', {
+      await axios.post('http://172.21.47.1/Backend/index.php/user/writereview', {
         movie: newReview.movie,
         rating: newReview.rating,
         review: newReview.review,
@@ -250,7 +251,7 @@ const handleLogout = async () => {
       />
       <TextInput
         label="Username"
-        value={AsyncStorage.getItem('username')}
+        value={username}
         disabled
         style={{ marginBottom: 10, backgroundColor: '#f5f5f5' }}
       />
