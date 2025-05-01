@@ -1,5 +1,5 @@
 
-
+/*
 import { Link } from "expo-router";
 import { Text, View, TextInput, Button, Alert } from "react-native";
 import { StyleSheet } from "react-native";
@@ -85,3 +85,4 @@ const styles= StyleSheet.create({
       color: "purple",
     },
   });
+*/
