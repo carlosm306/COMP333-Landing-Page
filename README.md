@@ -1,4 +1,26 @@
 # COMP333-Landing-Page
+
+You'll want to download the whole directory into your ht docs folder. You can navigate through the app by launching npx expo start -c, and starting out in app.js, as you would expect. Depending on your setup, you might have to download dependencies but those should be indicated when you try to launch the program.
+
+THIS IS IMPORTANT: You need to move the folder "Backend" out from this directory and into your ht docs directory. The Backend folder includes the Tests folder, which can move with it. In Tests, the file BackendTests.php includes the functions for problem 1. 
+
+Problem 2: We used chat GPT to create that last feature, by asking it to create a new user for each test, and delete it, but to make sure that it never would delete a real user.
+
+Problem 3:
+
+Here are the new features:
+1. Styling with React Native Paper
+2. Auto-Generated Visuals: In the detailed view of each review you can see a cycling image that relates to the movie title. 
+3. Game: We've heard that sign up is often a sticking point -- users who are thinking about using your site might be more reluctant if they have to sign up first -- so we made a game for users to play while they're thinking about signing up, to ingratiate ourselves to them
+4. Additional Unit Test Functionality: If you hardcode a value for the signup unit test, you have to change the hardcoded value every time, or the backend tells you that the user already exists, so we added functionality to create a random new user each time and clean it up (with handling to make sure no real users are deleted by accident).
+
+We also added all the functionality that was missing in the last assignment.
+
+Chat GPT was also useful for integrating Paper, and for creating the api connection and timing functionality for the auto-generated visuals.
+
+We're using 1 late day.
+
+# The following information pertains to Homework 3
 To use the app, navigate through the jsx files, with titles describing their function. The backend is now located in folders and files with names matching the rest api tutorial linked to the homwork. Work was split 50/50 with Carlos focusing more so on the frontend and Franklin focused more so on the backend. 
 
 We're using 2 late days. 
