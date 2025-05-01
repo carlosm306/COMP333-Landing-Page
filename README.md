@@ -3,6 +3,7 @@
 You'll want to download the whole directory into your ht docs folder. You can navigate through the app by launching npx expo start -c, and starting out in app.js, as you would expect. Depending on your setup, you might have to download dependencies but those should be indicated when you try to launch the program. Replace the IP address with your own in the frontend files.
 
 THIS IS IMPORTANT: You need to move the folder "Backend" out from this directory and into your ht docs directory. The Backend folder includes the Tests folder, which can move with it. In Tests, the file BackendTests.php includes the functions for problem 1. 
+Also, the keyboard can get in the way of the submit button when you're trying to add or edit reviews. The movie field doesn't allow line breaks, so you can clear the keyboard by tapping into that field and hitting enter, if you run into that problem. 
 
 Problem 2: We used chat GPT to create the last feature indicated below (Additional Unit Test Functionality), by asking it to create a new user for each test, and delete it, but to make sure that it never would delete a real user.
 
