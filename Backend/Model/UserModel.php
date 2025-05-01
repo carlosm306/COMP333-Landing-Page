@@ -37,6 +37,12 @@ class UserModel extends Database
         return $this->execute($sql, ["ssss", $username, $movie, $rating, $review]);
     }
 
+    public function editReview($id, $movie, $rating, $review)
+    {
+        $sql = "UPDATE reviews SET movie = ?, rating = ?, review = ? WHERE id = ?";
+        return $this->execute($sql, ["sssi", $movie, $rating, $review, $id]);
+    }    
+
     public function verifyPassword($username, $password)
     {
         // Step 1: Look up user by username
