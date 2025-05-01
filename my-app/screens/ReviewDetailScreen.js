@@ -1,35 +1,3 @@
-// import React from 'react';
-// import { ScrollView } from 'react-native';
-// import { Card, Title, Paragraph, Text } from 'react-native-paper';
-
-// const ReviewDetailScreen = ({ route }) => {
-//   const { item } = route.params;
-
-//   if (!item) {
-//     return <Text>No review data provided.</Text>;
-//   }
-
-//   return (
-//     <ScrollView contentContainerStyle={{ padding: 16 }}>
-//       <Title style={{ fontSize: 24, marginBottom: 10 }}>{item.movie}</Title>
-      
-//       <Card>
-//         <Card.Cover source={{ uri: 'https://via.placeholder.com/300x150' }} />
-//         <Card.Content>
-//           <Paragraph style={{ marginTop: 10 }}>Rating: {item.rating}/5</Paragraph>
-//           <Paragraph style={{ marginTop: 10 }}>{item.review}</Paragraph>
-//           <Paragraph style={{ marginTop: 10, fontStyle: 'italic' }}>
-//             - {item.username}
-//           </Paragraph>
-//         </Card.Content>
-//       </Card>
-//     </ScrollView>
-//   );
-// };
-
-// export default ReviewDetailScreen;
-
-
 import React, { useState, useEffect } from 'react';
 import { ScrollView, Image } from 'react-native';
 import { Card, Title, Paragraph } from 'react-native-paper';

@@ -27,7 +27,7 @@ const SignInScreen = ({ navigation, onSignInSuccess }) => {  // Add `navigation`
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || !data.user) {
         throw new Error(data?.error || 'Login failed');
       }
 
